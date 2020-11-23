@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rancher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rancher
+  template:
+    metadata:
+      labels:
+        app: rancher
+    spec:
+      containers:
+        - name: rancher
+          image: rancher/hello-world
+          resources:
+            limits:
+              cpu: "1"
+            requests:
+              cpu: 500m
+          ports:
+            - containerPort: 80
+          env:
+            - name: PORT
+              value: "80"
