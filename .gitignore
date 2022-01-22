@@ -1,1 +1,4 @@
 key_service_count.json
+*/*/*.tfstate
+*/*/*.tfstate.backup
+*/*/.terraform
